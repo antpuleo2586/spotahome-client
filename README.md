@@ -1,5 +1,8 @@
 # spotahome-client
 
+## Demo
+A viewable demo of the app can be found [here](https://ants-spotahome-client.herokuapp.com/).
+
 ## Installation
 
 To install, download the source code, or git clone the repository, and run `npm install`
