@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import styles from "../styles";
 
-const NavBar = (props) => {
+const NavBar = ({ title }) => {
     const Wrapper = styled.div`
     margin: 30px;
     display: flex;
@@ -21,7 +21,7 @@ const NavBar = (props) => {
     }
   `
     return <Wrapper>
-        <Title>{props.children}</Title>
+        <Title>{title}</Title>
         <Menu>The company - How we work - Contact us</Menu>
     </Wrapper>;
 };

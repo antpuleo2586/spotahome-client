@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import styles from "../styles";
 
 export default function () {
   const rotate360 = keyframes`
@@ -18,7 +19,7 @@ export default function () {
     margin-top: -40px;
     margin-left: -40px;
     border: 10px solid #F3F3F3;
-    border-top: 10px solid blue;
+    border-top: 10px solid ${styles.colours.primary};
     border-radius: 50%;
     width: 80px;
     height: 80px;

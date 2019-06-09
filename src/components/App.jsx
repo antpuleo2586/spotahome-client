@@ -1,32 +1,47 @@
 import React from 'react';
 import {ApolloProvider} from "react-apollo";
-import ApolloClient from "apollo-boost";
-import '../App.css';
-import logo from '../logo.svg';
+import ApolloClient, { gql } from "apollo-boost";
+import { Query } from "react-apollo";
+import NavBar from './NavBar'
+import Loader from './Loader'
+import Error from './Error'
+import Room from './Room'
 
 const client = new ApolloClient({
     uri: "https://ants-spotahome-server.herokuapp.com/"
 });
 
+const query = gql`
+{
+    rooms(city: "madrid") {
+        title
+        photoUrls{
+          homecard
+        }
+        monthlyPrice {
+          fixedPrice
+        }
+        currencySymbol
+    }
+}
+`
+
 function App() {
     return (
         <ApolloProvider client={client}>
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <p>
-                        Edit <code>src/App.js</code> and save to reload.
-                    </p>
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Learn React
-                    </a>
-                </header>
-            </div>
+            <NavBar title="Spotaroom" />
+            <Query
+                query={query}
+            >
+                {({ loading, error, data }) => {
+                    if (loading) return <Loader />;
+                    if (error) return <Error />;
+
+                    return data.rooms.map((room) => (
+                        <Room key={room.id} room={room} />
+                    ));
+                }}
+            </Query>
         </ApolloProvider>
     );
 }

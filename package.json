@@ -1,11 +1,14 @@
 {
   "name": "spotahome-client",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "The Spotahome Rooms client",
+  "author": "Antonio Puleo",
+  "license": "ISC",
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "styled-components": "^4.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
