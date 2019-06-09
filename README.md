@@ -15,6 +15,10 @@ To run the app, run `npm start`
 
 To test the app, run `npm test`
 
+## Deployment 
+
+Deploy with git via Heroku. Instructions are [here](https://devcenter.heroku.com/articles/git):
+
 ## Notes
 
 I chose to use Apollo client because of the ease of integrating with my Apollo GraphQL server.
