@@ -19,7 +19,7 @@ const query = gql`
           homecard
         }
         monthlyPrice {
-          fixedPrice
+          minimumPrice
         }
         currencySymbol
     }

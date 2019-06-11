@@ -45,7 +45,7 @@ const Room = ({ room }) => {
             <ContentContainer>
                 <TextContainer>
                     <Text>{room.title}</Text>
-                    <Price>{room.monthlyPrice.fixedPrice}{room.currencySymbol}</Price>
+                    <Price>{room.monthlyPrice.minimumPrice}{room.currencySymbol}</Price>
                 </TextContainer>
                 <ButtonsContainer>
                     <Button secondary desktopOnly>More details</Button>
